@@ -1,6 +1,6 @@
 .cart-dropdown-container {
 	position: absolute;
-	width: 240px;
+	width: 270px;
 	height: 340px;
 	display: flex;
 	flex-direction: column;
@@ -20,11 +20,34 @@
 		height: 240px;
 		display: flex;
 		flex-direction: column;
-		// overflow: scroll;
 		overflow: hidden;
+	}
+	.cart-items:hover {
+		overflow-y: scroll;
 	}
 
 	button {
 		margin-top: auto;
+	}
+
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		border-radius: 20px;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #888;
+		border-radius: 20px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
 	}
 }
