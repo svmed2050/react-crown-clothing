@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useDispatch } from 'react-redux'
+
+import { checkUserSession } from './store/user/user.action'
 import { Routes, Route } from 'react-router-dom'
 import Home from './routes/home/home.component'
 import React from 'react';
@@ -10,6 +14,14 @@ import Checkout from './routes/checkout/checkout.component'
 
 
 const App = () => {
+  console.log(process.env)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(checkUserSession())
+  }, []);
+
   return (
     <Routes>
       <Route path='/' element={<Navigation />} >
